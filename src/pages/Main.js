@@ -70,14 +70,20 @@ function Main() {
                     <img src={e.MAIN_IMG_THUMB} alt={e.MAIN_TITLE} />
                     <ul>
                       <li>구군 : {e.GUGUN_NM}</li>
-                      <li>운영 및 시간 : {e.USAGE_DAY_WEEK_AND_TIME}</li>
+                      {
+                        e.USAGE_DAY_WEEK_AND_TIME !== "" &&
+                        <li>운영 및 시간 : {e.USAGE_DAY_WEEK_AND_TIME}</li>
+                      }
                       {
                         e.MIDDLE_SIZE_RM1 !== "" &&
                         <li>편의 시설 : {e.MIDDLE_SIZE_RM1}</li>
                       }
-                      <li>이용요금</li>
+                      <li>이용요금 : {e.USAGE_AMOUNT}</li>
                       <li>교통편 : {e.TRFC_INFO}</li>
-                      <li>주요장소 : {e.MAIN_PLACE}</li>
+                      {
+                        e.MAIN_PLACE !== "" &&
+                        <li>주요장소 : {e.MAIN_PLACE}</li>
+                      }
                     </ul>
                   </NavLink>
                 </ContentItem>
